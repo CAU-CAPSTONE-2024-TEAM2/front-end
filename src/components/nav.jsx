@@ -30,7 +30,7 @@ const Nav = () => {
           <a onClick={() => navigate('/levels')}>난이도별 문제</a>
           <a onClick={() => navigate('/levels_category')}>유형별 문제</a>
           <a onClick={() => navigate('/quiz-intro')}>테스트</a>
-          <a onClick={() => navigate('/랭킹')}>랭킹</a>
+          <a onClick={() => navigate('/workingpage')}>랭킹</a>
         </nav>
       </div>
       <div className="header-right">
