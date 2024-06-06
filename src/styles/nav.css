@@ -1,0 +1,79 @@
+/* nav.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  border-radius: 30%;
+  height: 80px;
+  margin-right: 8px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav a {
+  margin: 0 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #007BFF;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.login-button {
+  margin-left: auto;
+  margin:5px;
+  font-weight: normal;
+}
+
+.login-button:hover{
+  color: #007BFF;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.notification {
+  position: relative;
+  margin-left: 20px;
+}
+
+.notification-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}

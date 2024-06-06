@@ -1,0 +1,22 @@
+/* LevelPage.css */
+.level-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* 컨테이너의 가로 스크롤 설정 */
+    white-space: nowrap; /* 가로로 나열되는 항목들이 줄바꿈 되지 않도록 설정 */
+    padding: 20px;
+    margin: auto;
+  }
+  
+.level-item {
+  flex: 0 0 auto; /* 항목들이 컨테이너 내에서 크기 조절 없이 원래 크기를 유지하도록 설정 */
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  text-align: center; /* 텍스트 수평 가운데 정렬 */
+}

@@ -1,0 +1,112 @@
+#wrapper {
+    padding: 20px 80px;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: auto; /* 가운데 정렬 */
+    height: 100vh; /* 전체 뷰포트 높이로 설정 */
+    display: flex;
+    flex-direction: column; /* 내용을 세로로 쌓음 */
+    justify-content: space-between; /* 내용 사이에 공간을 균등하게 배분 */
+}
+
+#navbar {
+    background-color: white;
+    height: 80px;
+    align-items: center;
+    padding: 0 50px;
+    margin-top: 50px;
+}
+
+#navbar_content_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar_content_wrapper #navbar_content_left {
+    display: flex;
+}
+
+#navbar_content_wrapper #navbar_content_right {
+    margin: auto 0;
+    display: flex;
+    vertical-align: middle;
+}
+
+#navbar_content_left #main_logo_text {
+    font-size: 50px;
+    color: #3a6bb5;
+    font-family: "Jalnan";
+}
+
+#navbar_content_wrapper .navbar_a_text {
+    color: #666666;
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+#navbar .vertical_line {
+    border-left: 2px solid #666666;
+    margin: auto 60px;
+    height: 30px;
+    border-radius: 10%;
+}
+
+#slide_wrapper {
+    padding: 40px;
+    max-width: 100%;
+    overflow: hidden;
+    flex-grow: 1;
+    min-height: 50vh; /* 최소 높이 설정 */
+}
+
+#slide_wrapper .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 추가: 센터 정렬 */
+    width: 80%;
+    border-radius: 50px;
+    height: auto; /* 슬라이드의 높이 자동 조절 */
+}
+
+#slide_wrapper .slide_img {
+    width: 100%; /* 너비를 부모에 맞춤 */
+    height: 100%; /* 높이를 부모에 맞춤 */
+    object-fit: contain; /* 컨테이너 안에서 이미지가 잘리지 않도록 설정 */
+    border-radius: 50px;
+}
+
+/* 미디어 쿼리를 사용하여 화면 크기에 따라 레이아웃 조절 */
+@media (max-width: 768px) {
+    #wrapper {
+        padding: 10px 20px;
+    }
+
+    #navbar_content_wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #navbar_content_left, #navbar_content_right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar_a_text, .vertical_line {
+        display: none; /* 작은 화면에서는 일부 요소 숨김 */
+    }
+
+    #main_logo_text {
+        margin-bottom: 20px;
+    }
+
+    #wrapper {
+        padding: 10px 20px;
+    }
+
+    #slide_wrapper .slide_img {
+        margin: 0 auto;
+        width: 100%; /* 너비를 부모에 맞춤 */
+        height: 100%; /* 높이도 부모에 맞춤 */
+        object-fit: contain; /* 컨테이너 안에서 이미지가 잘리지 않도록 설정 */
+    }
+}

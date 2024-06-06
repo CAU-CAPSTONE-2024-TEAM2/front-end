@@ -1,0 +1,51 @@
+/* 기본 스타일 */
+#wrapper {
+    width: 100%; /* 전체 너비를 사용 */
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: auto; /* 가운데 정렬 */
+  }
+  
+  #navbar_content_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  #slide_wrapper {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .slide_img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* 미디어 쿼리를 사용하여 화면 크기에 따라 레이아웃 조절 */
+  @media (max-width: 768px) {
+    #navbar_content_wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .navbar_a_text, .vertical_line {
+      display: none; /* 작은 화면에서는 일부 요소 숨김 */
+    }
+  
+    #main_logo_text {
+      margin-bottom: 20px;
+    }
+  
+    .slide_img {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .slide_img {
+      max-width: 85%;
+      margin: 0 auto; /* 작은 화면에서 이미지 가운데 정렬 */
+    }
+  }
+  
