@@ -14,6 +14,7 @@ import QuizAudioRecorderPage from './pages/QuizAudioRecordingPage';
 import QuizEvaluationPage from './pages/QuizEvaluationPage';
 import QuizIntroPage from './pages/QuizIntroPage';
 import LevelCategoryPage from './pages/LevelCategoryPage';
+import WorkingPage from './pages/WorkingPage';
 function App() {
   return (
     <div>
@@ -32,6 +33,7 @@ function App() {
           <Route path="/quiz-evaluation" element={<PrivateRoute><QuizEvaluationPage /></PrivateRoute>} />
           <Route path="/quiz-intro" element={<PrivateRoute><QuizIntroPage /></PrivateRoute>} />
           <Route path="/grammer_class/:id" element={<PrivateRoute><LevelCategoryPage /></PrivateRoute>} />
+          <Route path="/workingpage" element={<WorkingPage />} />
           {/* 
           <Route path="/유형별" element={<유형별 />} />
           <Route path="/테스트" element={<테스트 />} />
