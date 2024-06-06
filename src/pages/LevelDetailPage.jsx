@@ -54,6 +54,7 @@ const LevelDetailPage = () => {
   };
 
   const renderStars = (accuracy) => {
+    console.log(accuracy);
     if (accuracy<25) {
       return (
         <div>
