@@ -12,8 +12,8 @@ const Evaluation = () => {
     accuracy,
     correct_pronounciation_graph,
     chosen_pronounciation,
-    //answer,
-    //feedback,
+    answer,
+    feedback,
     user_pronounciation,
   } = responseData;
 
@@ -28,7 +28,7 @@ const Evaluation = () => {
       <h1>Evaluation Results</h1>
       <div className="graphs-container">
         <div className="graph">
-          <h2>표준 발음 그래프</h2>
+          <h2>표준 발음 그래프 : {answer}</h2>
           <img src={correctGraphUrl} alt="Correct Pronunciation Graph" />
         </div>
         <div className="graph">
@@ -39,6 +39,8 @@ const Evaluation = () => {
       <div className="accuracy-container">
         <h2>정확도</h2>
         <p>{accuracy.toFixed(2)}%</p>
+        <h2>발음 TIP</h2>
+        <h2>{feedback}</h2>
       </div>
     </div>
     <Footer></Footer>

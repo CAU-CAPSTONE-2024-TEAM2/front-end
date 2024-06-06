@@ -16,6 +16,11 @@ export const usernameState = atom({
 	default: '',
   });
 
+  export const userSolvedState = atom({
+	key: 'usersolvedState',
+	default: '',
+  });
+
 const accessTokenSelector = selector({
 	key: 'AccessTokenSelector',
 	get: ({ get }) => {

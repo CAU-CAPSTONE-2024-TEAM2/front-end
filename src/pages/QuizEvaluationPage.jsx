@@ -39,8 +39,11 @@ const QuizEvaluationPage = () => {
         {evaluations.map((evaluation, index) => {
           const {
             accuracy,
-            correct_pronounciation_graph,
-            user_pronounciation,
+    correct_pronounciation_graph,
+    chosen_pronounciation,
+    answer,
+    feedback,
+    user_pronounciation
           } = evaluation;
 
           const correctGraphUrl = `${process.env.REACT_APP_API_URL}/${correct_pronounciation_graph}`;
@@ -58,18 +61,20 @@ const QuizEvaluationPage = () => {
                 <div className="evaluation-details">
                   <div className="graphs-container">
                     <div className="graph">
-                      <h3>Correct Pronunciation Graph</h3>
+                    <h3>표준 발음 그래프 : {answer}</h3>
                       <img src={correctGraphUrl} alt="Correct Pronunciation Graph" />
                     </div>
                     <div className="graph">
-                      <h3>Your Pronunciation Graph</h3>
+                    <h3>사용자 발음 그래프 : {chosen_pronounciation}</h3>
                       <img src={userGraphUrl} alt="User Pronunciation Graph" />
                     </div>
                   </div>
                   <div className="accuracy-container">
-                    <h3>Accuracy</h3>
-                    <p>{accuracy.toFixed(2)}%</p>
-                  </div>
+        <h2>정확도</h2>
+        <p>{accuracy.toFixed(2)}%</p>
+        <h2>발음 TIP</h2>
+        <h2>{feedback}</h2>
+      </div>
                 </div>
               )}
             </div>

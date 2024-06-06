@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { accessTokenState, usernameState } from '../hooks/Auth';
+import { accessTokenState, usernameState, userSolvedState } from '../hooks/Auth';
 import '../styles/LoginPage.css';
 import Nav from '../components/nav.jsx';
 import Footer from '../components/footer.jsx';
@@ -12,6 +12,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [userSovled, setuserSovled] = useRecoilState(userSolvedState);
   const [user, setUser] = useRecoilState(usernameState);
   const navigate = useNavigate();
 
@@ -21,7 +22,6 @@ const LoginPage = () => {
     setError('');
 
     try {
-      console.log(process.env.REACT_APP_API_URL);
       const response = await fetch(`${process.env.REACT_APP_API_URL}/user/auth/login/`, {
         method: 'POST',
         headers: {
@@ -47,6 +47,8 @@ const LoginPage = () => {
       console.error('Login error:', error);
       setError(error.message || 'An unexpected error occurred.');
     }
+
+
 
     setLoading(false);
   };
