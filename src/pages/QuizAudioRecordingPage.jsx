@@ -118,7 +118,14 @@ const QuizAudioRecorderPage = () => {
 
   const fetchNextQuestion = async (questionId, questionIndex, newEvaluations) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/questions/${questionId}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/questions/${questionId}`,{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+        }
+      });
+      
       const data = await response.json();
       navigate('/quiz-audio-recorder', { state: { question: data, currentQuestionIndex: questionIndex, questions, evaluations: newEvaluations } });
     } catch (error) {

@@ -28,8 +28,8 @@
   text-align: center;
 }
 
-button {
-  margin-top: 10px;
+.navigate-button {
+  margin: 10px 5%;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -37,6 +37,7 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
+  width: 40%;
 }
 
 button:hover {

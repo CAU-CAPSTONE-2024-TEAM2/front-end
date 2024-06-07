@@ -26,7 +26,7 @@ const Evaluation = () => {
     <div>
       <Nav></Nav>
       <div className="evaluation-container">
-        <h1>Evaluation Results</h1>
+        <h1>발음 분석 결과</h1>
         <div className="graphs-container">
           <div className="graph">
             <h2>표준 발음 그래프 : {answer}</h2>

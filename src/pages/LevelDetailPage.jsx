@@ -7,6 +7,7 @@ import emptystar from '../img/empty_star.png'
 import coloredstar from '../img/colored_star.png'
 import { accessTokenState } from '../hooks/Auth.jsx';
 import { useRecoilValue } from 'recoil';
+import LoadingCommon from '../components/loading-common.jsx';
 
 const LevelDetailPage = () => {
   const { id } = useParams();  // URL로부터 id 추출
@@ -46,7 +47,7 @@ const LevelDetailPage = () => {
     fetchLevelDetail();
   }, [level, id]);  // 의존성 배열에 id를 포함하여 id가 변경될 때마다 데이터를 다시 불러옴
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingCommon/>;
   if (error) return <div>Error: {error}</div>;
 
   const goToLevelDetail = (id, word) => {
@@ -65,16 +66,16 @@ const LevelDetailPage = () => {
     } else if(accuracy<50){
       return (
         <div>
-          <img className="star" alt="" src={emptystar}></img>
-          <img className="star" alt="" src={emptystar}></img>
           <img className="star" alt="" src={coloredstar}></img>
+          <img className="star" alt="" src={emptystar}></img>
+          <img className="star" alt="" src={emptystar}></img>
         </div>);
     }else if(accuracy<75){
       return (
         <div>
+          <img className="star" alt="" src={coloredstar}></img>
+          <img className="star" alt="" src={coloredstar}></img>
           <img className="star" alt="" src={emptystar}></img>
-          <img className="star" alt="" src={coloredstar}></img>
-          <img className="star" alt="" src={coloredstar}></img>
         </div>);
     }else{
       return (
@@ -88,7 +89,7 @@ const LevelDetailPage = () => {
     <div>
       <Nav></Nav>
       <div className="level-name">
-      <h1>Level Details</h1>
+      <h1>난이도별 문제</h1>
       </div>
       <div className="level-container">
         {levelDetail.map((level) => (

@@ -7,6 +7,7 @@ import { useRecoilState } from 'recoil';
 import { accessTokenState } from '../hooks/Auth.jsx';
 import Nav  from '../components/nav.jsx'
 import Footer from '../components/footer.jsx'
+import LoadingCommon from '../components/loading-common.jsx';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
@@ -46,7 +47,7 @@ const LevelPage = () => {
       setLoading(false);
     }
   }
-
+  if (loading) return <LoadingCommon/>;
   // const fetchLevelsTest = () => {
   //   const data = [
   //       { "id": 1, "name": "Beginner1", "accuracy": 75 },
@@ -70,7 +71,7 @@ const LevelPage = () => {
     <div>
       <Nav></Nav>
       <div className="header">
-          <h1>Levels</h1>
+          <h1>난이도별 문제</h1>
       </div>
       <div className="level-container">
       {levels.map((level) => (
