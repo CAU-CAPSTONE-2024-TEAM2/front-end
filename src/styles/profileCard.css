@@ -106,3 +106,14 @@
   color: #999;
   text-align: center;
 }
+
+.quiz-button{
+  height:45%;
+  background-color: #53be2b;
+  font-size: 20px;
+  width : 70%;
+}
+
+.quiz-button :hover{
+  background-color: #d98b89;
+}

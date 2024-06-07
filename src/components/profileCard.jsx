@@ -4,14 +4,14 @@ import profileImg from '../img/avatar.png';
 import levelImg from '../img/rank5.jpeg';
 import { useRecoilValue } from 'recoil';
 import { usernameState, accessTokenState } from '../hooks/Auth';
-
+import { useNavigate } from 'react-router-dom';
 const ProfileCard = () => {
   const username = useRecoilValue(usernameState);
   const accessToken = useRecoilValue(accessTokenState);
   const [userSolved, setUserSolved] = useState(0);
   const [badgeLevel, setBadgeLevel] = useState('가'); // 배지 레벨 상태 추가
   const [error, setError] = useState('');
-
+  const navigate = useNavigate();
   // getLevel 함수 정의
   const getLevel = async () => {
     try {
@@ -55,6 +55,10 @@ const ProfileCard = () => {
     getLevel(); // 컴포넌트가 마운트될 때 getLevel 호출
   }, []);
 
+  const newProb = () => {
+    navigate('/quiz-intro'); // 퀴즈 소개 페이지로 이동
+  }
+
   return (
     <div className="profile-card">
       <div className="profile-main">
@@ -80,6 +84,7 @@ const ProfileCard = () => {
           </div>
           <div className="stat class">
             <h3>오늘의 문제</h3>
+            <button className="quiz-button" onClick={newProb}>퀴즈 응시하기</button>
             <p>달성 시 RATING +10</p>
           </div>
           <div className="stat comunity">

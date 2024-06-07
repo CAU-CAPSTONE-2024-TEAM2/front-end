@@ -38,12 +38,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Ttobaki © 2024 - . </p>
+        <p>Ttobaki © 20240303-20240607 . </p>
         <p>
           또박이 · Team Cx2<br />
         </p>
         <div className="footer-icons">
-          <span>Icons here</span>
+          <span>CAU-Capstone</span>
         </div>
       </div>
     </footer>
